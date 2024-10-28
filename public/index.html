@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIDC Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #e9ecef;
+            text-align: center;
+            padding: 50px;
+        }
+        .navbar {
+            margin-bottom: 30px;
+        }
+        .jumbotron {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        .btn-custom {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            margin: 10px;
+        }
+        footer {
+            margin-top: 30px;
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">OIDC Demo App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to the OIDC Demo Application!</h1>
+            <p class="lead">Choose your login method below to experience the power of OpenID Connect.</p>
+            <hr class="my-4">
+            <h2>Login Options</h2>
+            <button id="login-pkce" class="btn btn-primary btn-custom">Login OIDC with PKCE</button>
+            <button id="login" class="btn btn-secondary btn-custom">Login OIDC without PKCE</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 OIDC Demo Application | <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        document.getElementById("login-pkce").onclick = function () {
+            window.location.href = "/oidc/login/pkce";
+        };
+        document.getElementById("login").onclick = function () {
+            window.location.href = "/oidc/login";
+        };
+    </script>
+</body>
+</html>
